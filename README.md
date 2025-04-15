@@ -1,2 +1,5 @@
-- 
+- ``git clone https://github.com/ayaan-momin/aitherapytest.git``
+- cd to folder
 - ``pip install -r requirements.txt  ``
+- add gemini api in .env
+- ``python main.py``
