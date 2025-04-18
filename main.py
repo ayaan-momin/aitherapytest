@@ -139,6 +139,7 @@ class TherapistGUI:
             self.current_emotion = emotion
             self.current_expression = expression
             self.speak(text)
+            print(f"-Therapist ({timestamp}): {text} \nEmotion: {emotion} \nExpression: {expression}", end="-\n", flush=True)
     
     def draw_chat(self):
         """Draw the chat section"""
