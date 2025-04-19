@@ -25,6 +25,7 @@ class TherapistGUI:
         self.button_hover_color = (100, 100, 130)
         self.font = pygame.font.SysFont("Arial", 18)
         self.title_font = pygame.font.SysFont("Arial", 22, bold=True)
+        self.title_font2 = pygame.font.SysFont("Arial", 18) 
         self.messages = []
         self.input_text = ""
         self.cursor_visible = True
@@ -275,9 +276,9 @@ class TherapistGUI:
         pygame.draw.rect(self.screen, self.bg_color, self.emotion_rect)
         pygame.draw.rect(self.screen, self.accent_color, self.emotion_rect, 2)
         
-
-        title = self.title_font.render("Emotion Detected", True, self.accent_color)
-        self.screen.blit(title, (self.emotion_rect.x + 10, self.emotion_rect.y + 10))
+        
+        title = self.title_font2.render("Emotion Detected", True, self.accent_color)
+        self.screen.blit(title, (self.emotion_rect.x + 10, self.emotion_rect.y + 4),)
         
 
         emotions = ["happy", "sad", "angry", "anxious", "fearful", "excited", "hopeful", "neutral"]
@@ -286,7 +287,7 @@ class TherapistGUI:
         bar_width = self.emotion_rect.width - 120
         
         for i, emotion in enumerate(emotions):
-            y_pos = self.emotion_rect.y + 50 + (i * spacing)
+            y_pos = self.emotion_rect.y + 25 + (i * spacing)
             
             label = self.font.render(emotion.capitalize(), True, self.text_color)
             self.screen.blit(label, (self.emotion_rect.x + 20, y_pos))
